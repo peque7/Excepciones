@@ -5,12 +5,14 @@
  */
 package excepciones;
 
+import static com.oracle.jrockit.jfr.ContentType.Percentage;
+import java.util.ArrayList;
+
 /**
  *
  * @author pequesillo
  */
 public class Excepciones {
-
     /**
      * @param args the command line arguments
      */
@@ -19,8 +21,8 @@ public class Excepciones {
         ClassCastException();
         IllegalArgumentException();
         IllegalStateException();
-        NullPointerException();
-        NumberFormatException();
+        NullPointerException(null);
+        NumberFormatException("6");
         AssertionError();
         ExceptionInInitializerError();
         StackOverflowError();
@@ -32,68 +34,76 @@ public class Excepciones {
         try {
             String array[] = {""};
             array[1] = "hola";
-        } catch (ArrayIndexOutOfBoundsException aioobe) {
-            System.out.println(aioobe);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println(e);
             
         }
     }
     public static void ClassCastException(){
         try {
             
-        } catch (ClassCastException cce) {
-            
+        } catch (ClassCastException e) {
+            System.out.println(e);
         }
     }
     public static void IllegalArgumentException(){
         try {
             
-        } catch (IllegalArgumentException iae) {
-            
+        } catch (IllegalArgumentException e) {
+            System.out.println(e);
         }
     }
     public static void IllegalStateException(){
         try {
             
-        } catch (IllegalStateException ise) {
-            
+        } catch (IllegalStateException e) {
+            System.out.println(e);
         }
     }
-    public static void NullPointerException(){
+    public static void NullPointerException(String a){
         try {
-            
-        } catch (NullPointerException npe) {
-            
+        } catch (NullPointerException e) {
+            System.out.println(e);
         }
     }
-    public static void NumberFormatException(){
+    public static void NumberFormatException(String letra){
         try {
-        } catch (NumberFormatException nfe) {
+            int b = Integer.parseInt(letra);
+            String letra2 = String.valueOf(b);
+        } catch (NumberFormatException e) {
+            System.out.println(e);
         }
     }
     public static void AssertionError(){
         try {
-        } catch (AssertionError ae) {
+        } catch (AssertionError e) {
+            System.out.println(e);
         }
     }
     public static void ExceptionInInitializerError(){
         try {
-        } catch (ExceptionInInitializerError eie) {
+        } catch (ExceptionInInitializerError e) {
+            System.out.println(e);
         }
     }
     public static void StackOverflowError(){
         try {
-        } catch (StackOverflowError soe) {
+        } catch (StackOverflowError e) {
+            System.out.println(e);
         }
     }
     public static void NoClassDefFoundError(){
         try {
-        } catch (NoClassDefFoundError ncdfe) {
+            
+        } catch (NoClassDefFoundError e) {
+            System.out.println(e);
         }
     }
     public static void Exception(){
         try {
         } catch (Exception e) {
+            System.out.println(e);
         }
     }
-    
+
 }
